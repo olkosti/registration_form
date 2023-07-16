@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="кг">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="skeleton.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapp">
+        <h1 class="title">Форма регистрации</h1>
+        <form action="" class="form" novalidate>
+            <label class="form__label" for="name">Ваше имя:</label>
+            <input type="text" name="name" class="form__input" placeholder="Введите имя" minlength="2" maxlength="20"
+                required />
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" class="form__input" placeholder="Введите email" required />
+
+            <label class="form__label" for="age">Возраст:</label>
+            <input type="text" name="age" class="form__input" placeholder="Введите возраст" required />
+
+            <label class="form__label" for="gender">Укажите ваш пол:</label>
+            <div class="radio">
+                <input type="radio" name="gender" class="form__radio" value="Мужской" />
+                <span>Мужской</span>
+            </div>
+            <div class="radio">
+                <input type="radio" name="gender" class="form__radio" value="Женский" />
+                <span>Женский</span>
+            </div>
+
+            <label for="profession" class="form__label">Ваша профессия:</label>
+            <select id="profession" name="profession" class="form__select" required placeholder>
+                <option value="Врач">Врач</option>
+                <option value="Программист">Программист</option>
+                <option value="Учитель">Учитель</option>
+                <option value="Дизайнер">Дизайнер</option>
+                <option value="Инженер">Инженер</option>
+                <option value="Продавец">Продавец</option>
+                <option value="Другое">Другое</option>
+            </select>
+            <br />
+
+            <label class="form__label" for="password">Пароль:</label>
+            <input type="password" name="password" class="form__input" placeholder="Введите пароль" required
+                placeholder="Введите пароль" minlength="8"
+                pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,20}$/" />
+            <br>
+
+            <label class="form__label" for="password">Повторите пароль:</label>
+            <input type="password" name="password" class="form__input" placeholder="Введите пароль" required
+                placeholder="Повторите пароль" minlength="8"
+                pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,20}$/" />
+            <br>
+
+            <div class="flex">
+                <input type="checkbox" id="checkbox1" name="assent" class="form__checkbox" required />
+                <label for="assent">Я даю свое согласие на обработку моей персональной информации</label>
+            </div>
+
+
+            <input name="button" type="submit" value="Отправить" class="form__submit" />
+
+
+        </form>
+    </div>
+
+</body>
+
+</html>

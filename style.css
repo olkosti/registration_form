@@ -1,0 +1,27 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+.wrapp {
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 1px solid black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.title {
+    display: flex;
+    justify-content: center;
+}
+.form {
+    margin: 30px 0px 30px 30px;
+}
+
+.flex {
+    display: flex;
+    margin-bottom: 30px;
+}
+.form__checkbox {
+    margin: 0;
+}
+.flex label {
+    margin: 0 0 0 10px;
+}
