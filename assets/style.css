@@ -25,3 +25,9 @@
 .flex label {
     margin: 0 0 0 10px;
 }
+.form__input {
+    width: 250px;
+}
+.error-message {
+    color: red;
+}
