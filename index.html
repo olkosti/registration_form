@@ -36,14 +36,14 @@
             </div>
 
             <div class="form__gender">
-                <label class="form__label" for="gender">Укажите ваш пол:</label>
+                <label class="form__label">Укажите ваш пол:</label>
                 <div class="radio">
                     <input type="radio" name="gender" id="gender__male" class="form__radio" value="Мужской" />
-                    <span>Мужской</span>
+                    <label for="gender__male" class="gender__male">Мужской</label>
                 </div>
                 <div class="radio">
                     <input type="radio" name="gender" id="gender__female" class="form__radio" value="Женский" />
-                    <span>Женский</span>
+                    <label for="gender__female" class="gender__female">Женский</label>
                 </div>
                 <p class="error-message" id="gender-error"></p>
             </div>
@@ -65,28 +65,27 @@
 
             <div>
                 <label class="form__label" for="password">Пароль:</label>
-                <input type="password" name="password" class="form__input" placeholder="Введите пароль" required
-                    placeholder="Введите пароль" minlength="8"
-                    pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,20}$/" />
+                <input type="password" name="password" id="password" class="form__input" placeholder="Введите пароль"
+                    required placeholder="Введите пароль" />
                 <br>
-                <p class="error-message" id="age-error"></p>
+                <p class="error-message" id="password-error"></p>
             </div>
 
             <div>
                 <label class="form__label" for="repassword">Повторите пароль:</label>
-                <input type="password" name="repassword" class="form__input" placeholder="Введите пароль" required
-                    placeholder="Повторите пароль" minlength="8"
+                <input type="password" name="repassword" id="repassword" class="form__input"
+                    placeholder="Повторите пароль" required minlength="8"
                     pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,20}$/" />
                 <br>
-                <p class="error-message" id="age-error"></p>
+                <p class="error-message" id="repassword-error"></p>
             </div>
 
             <div class="flex">
-                <input type="checkbox" id="checkbox1" name="assent" class="form__checkbox" required />
-                <label class="form__label assent" for="assent">Я даю свое согласие на обработку моей персональной
+                <input type="checkbox" id="assent" name="assent" class="form__checkbox" required />
+                <label class="form__label" for="assent">Я даю свое согласие на обработку моей персональной
                     информации</label>
-                <p class="error-message" id="age-error"></p>
             </div>
+            <p class="error-message" id="assent-error"></p>
 
 
             <div class="form__button">
