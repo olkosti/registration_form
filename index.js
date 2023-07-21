@@ -20,23 +20,21 @@ const assentError = document.getElementById('assent-error');
 
 
 function validateField() {
-  // Проверяем валидность имени
+  let formsIsValid = true;
+
+    // Проверяем валидность имени
     if (!nameInput.validity.valid) {
-    // Меняем стиль рамки инпута
-    // nameInput.style.border = "1px solid red";
     nameInput.classList.add('error');
-    // Отображаем сообщение об ошибке
     nameError.textContent = nameInput.validationMessage;
+    formsIsValid = false;
     }
 
     // Проверяем валидность email
     const regexpEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
     let validEmail = regexpEmail.test(emailInput.value);
 
-    if (!validEmail) {
-        // Меняем стиль рамки инпута
-        emailInput.classList.add('error');
-        // Отображаем сообщение об ошибке
+    if (!validEmail) {       
+        emailInput.classList.add('error');        
         emailError.textContent = emailInput.validationMessage;
         }
 
@@ -44,8 +42,8 @@ function validateField() {
     if (!ageInput.validity.valid) {
         // Меняем стиль рамки инпута
         ageInput.classList.add('error');
-        // Отображаем сообщение об ошибке
         ageError.textContent = ageInput.validationMessage;
+        formsIsValid = false;
         }
 
     // Проверяем валидность gender
@@ -58,13 +56,15 @@ function validateField() {
     // Отображаем сообщение об ошибке
     if (!isChecked) {
         genderError.textContent = "Выберете один из вариантов";
-    } else { 
-        genderError.textContent = '';
+        formsIsValid = false;
     } 
+    // else { 
+    //     genderError.textContent = '';
+    // } 
 
     // Проверяем валидность password
     const passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
-    // Validate password
+    
     let validPassword = passwordRegex.test(passwordInput.value);
 
     if (validPassword) {
@@ -72,19 +72,21 @@ function validateField() {
     } else {
       passwordInput.classList.add('error');
       passwordError.textContent = 'Пароль должен содержать не менее 8 символов и включать как минумум одну цифру, одну прописную букву строчную букву, а также специальный символ.';
+      formsIsValid = false;
     }
   
     //Проверяем repassword 
-    if (passwordInput.value !== rePasswordInput.value) {
-    // Меняем стиль рамки инпута
+    if (passwordInput.value !== rePasswordInput.value) {    
       rePasswordInput.classList.add('error');
-    // Отображаем сообщение об ошибке
       rePasswordError.textContent = 'Пароли не совпадают';
+      formsIsValid = false;
     }
 
     if (!assentInput.checked) {
       assentError.textContent = "Необходимо дать согласие на обработку персональных данных.";
+      formsIsValid = false;
     }
+    return formsIsValid;
 };
 
 
@@ -98,5 +100,14 @@ form.addEventListener('submit', function(event) {
     if (isFormValid) {
       // Выводим значения полей формы в консоль
       console.log(nameInput.value);
+      console.log(emailInput.value);
+      console.log(ageInput.value);
+      console.log(genderInput.value);
+      console.log(professionInput.value);
+      console.log(passwordInput.value);
+      console.log(rePasswordInput.value);
+      console.log(assentInput.value);
+
+      form.reset();
     }
 }); 
